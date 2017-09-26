@@ -38,7 +38,7 @@ public class Main {
         String val;
 
         for (int value = startPos; value <= wordLength; startPos++ ){
-
+            System.out.println("We out here");
         }
 
 
