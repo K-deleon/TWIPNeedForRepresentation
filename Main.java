@@ -8,37 +8,112 @@ public class Main {
 
         Scanner wordInput = new Scanner(System.in);
         System.out.println("Please type a word");
-        String word = wordInput.next();
+        String word = wordInput.nextLine();
+
+
+        String hexadecimal, octal, binary;
+        int decimal;
 
         char[] sortWord = word.toCharArray();
         int wordLength = sortWord.length;
 
         double startPercent = (Math.random());
-        int startPos = (int)(startPercent * wordLength);
+        int startPos = (int) (startPercent * wordLength);
+        int nextPos = startPos;
         System.out.println("First position is " + startPos);
 
+        int corr = (int)(Math.random() * 10);
+ //       int getToZero = startPos;
 
-        int corr = (int)(Math.random()*10);
-        if (corr<=1){
-            System.out.println("Start with binary, " + corr);
-        } else if (corr <= 3) {
-            System.out.println("Start with octal, " + corr);
-        } else if (corr<=5){
-            System.out.println("Start with decimal, " + corr);
-        } else if (corr<=7){
-            System.out.println("Start with hexadecimal, " + corr);
-        } else if (corr <=9){
-            System.out.println("Start with ASCII, " + corr);
-        } else {
-            System.out.print("Kiara something went wrong!, " + corr);
-        }
+   /*         while(startPos != 0){
+                char nextVal = sortWord[nextPos];
+                System.out.println("PLS WORK");
 
-        char startVal = sortWord[startPos];
-        System.out.println(startVal);
-        String val;
+                if (corr % 10 == 0 || corr % 10 == 1) {
+                    //binary
+                    int binVal = (int)nextVal;
+                    binary = Integer.toBinaryString(binVal);
+                    System.out.println(binary + ", " + nextVal);
+                    getToZero--;
+                    nextPos--;
+                    corr-=2;
 
-        for (int value = startPos; value <= wordLength; startPos++ ){
-            System.out.println("We out here");
+                } else if (corr % 10 == 2 || corr % 10 == 3) {
+                    //octal
+                    int decVal = (int)nextVal;
+                    octal = Integer.toOctalString(decVal);
+                    System.out.println(octal + ", " + nextVal);
+                    getToZero--;
+                    nextPos--;
+                    corr-=2;
+
+                } else if (corr % 10 == 4 || corr % 10 == 5) {
+                    //decimal
+                    decimal = (int)nextVal;
+                    System.out.println(decimal + ", " + nextVal);
+                    getToZero--;
+                    nextPos--;
+                    corr-=2;
+
+                } else if (corr % 10 == 6 || corr % 10 == 7) {
+                    //hexadecimal
+                    hexadecimal = Integer.toHexString((int) nextVal);
+                    System.out.println(hexadecimal + ", " + nextVal);
+                    getToZero--;
+                    nextPos--;
+                    corr-=2;
+
+                } else if (corr % 10 == 8 || corr % 10 == 9) {
+                    //ascii
+                    System.out.println(nextVal);
+                    getToZero--;
+                    nextPos--;
+                    corr-=2;
+
+                }
+
+            }
+
+*/
+
+        for (int charVal = startPos; charVal < wordLength; corr+=2) {
+
+            char startVal = sortWord[startPos];
+            char nextVal = sortWord[nextPos];
+
+            if (corr % 10 == 0 || corr % 10 == 1) {
+                //binary
+                int binVal = (int)nextVal;
+                binary = Integer.toBinaryString(binVal);
+                charVal++;
+                System.out.println(binary);
+                nextPos++;
+
+            } else if (corr % 10 == 2 || corr % 10 == 3) {
+                //octal
+                int decVal = (int)nextVal;
+                octal = Integer.toOctalString(decVal);
+                System.out.println(octal);
+                charVal++;
+                nextPos++;
+            } else if (corr % 10 == 4 || corr % 10 == 5) {
+                //decimal
+                decimal = (int)nextVal;
+                System.out.println(decimal);
+                charVal++;
+                nextPos++;
+            } else if (corr % 10 == 6 || corr % 10 == 7) {
+                //hexadecimal
+                hexadecimal = Integer.toHexString((int) nextVal);
+                System.out.println(hexadecimal);
+                charVal++;
+                nextPos++;
+            } else if (corr % 10 == 8 || corr % 10 == 9) {
+                //ascii
+                System.out.println(nextVal);
+                charVal++;
+                nextPos++;
+            }
         }
 
 
