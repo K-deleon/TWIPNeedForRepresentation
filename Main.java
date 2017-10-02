@@ -91,8 +91,8 @@ public class Main {
 
             } else if (corr % 10 == 2 || corr % 10 == 3) {
                 //octal
-                int decVal = (int)nextVal;
-                octal = Integer.toOctalString(decVal);
+                int octVal = (int)nextVal;
+                octal = Integer.toOctalString(octVal);
                 System.out.println(octal);
                 charVal++;
                 nextPos++;
@@ -114,8 +114,7 @@ public class Main {
                 charVal++;
                 nextPos++;
             }
+
         }
-
-
     }
-}
+ }
